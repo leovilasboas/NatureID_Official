@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#107a4b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3ece7e" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a5d36"/>
+      <stop offset="50%" stop-color="#0d8b52"/>
+      <stop offset="100%" stop-color="#14c46d"/>
+    </linearGradient>
+    <path id="leaf" d="M0,0 C30,10 60,30 30,60 C60,30 80,10 100,0 C80,20 60,40 50,50 C60,40 80,20 100,0" />
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative elements -->
+  <g opacity="0.7">
+    <!-- Leaf pattern top left -->
+    <g transform="translate(50, 50) scale(1.5)">
+      <use href="#leaf" fill="url(#leafGradient)" />
+    </g>
+    
+    <!-- Leaf pattern top right -->
+    <g transform="translate(1800, 100) rotate(90) scale(2)">
+      <use href="#leaf" fill="url(#leafGradient)" />
+    </g>
+    
+    <!-- Leaf pattern bottom right -->
+    <g transform="translate(1700, 950) rotate(180) scale(2.5)">
+      <use href="#leaf" fill="url(#leafGradient)" />
+    </g>
+    
+    <!-- Leaf pattern bottom left -->
+    <g transform="translate(150, 900) rotate(270) scale(2)">
+      <use href="#leaf" fill="url(#leafGradient)" />
+    </g>
+  </g>
+  
+  <!-- Middle decoration -->
+  <g opacity="0.3">
+    <circle cx="960" cy="540" r="400" fill="white"/>
+    <circle cx="960" cy="540" r="300" fill="url(#bgGradient)"/>
+  </g>
+  
+  <!-- Abstract leaf shapes throughout -->
+  <g opacity="0.2">
+    <g transform="translate(300, 200) rotate(45) scale(0.8)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(1200, 300) rotate(135) scale(0.6)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(800, 800) rotate(225) scale(0.7)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(500, 600) rotate(315) scale(0.5)">
+      <use href="#leaf" fill="white" />
+    </g>
+  </g>
+  
+  <!-- Scattered small leaves -->
+  <g opacity="0.15">
+    <g transform="translate(400, 150) scale(0.3)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(1500, 200) scale(0.2) rotate(30)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(1600, 700) scale(0.25) rotate(60)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(900, 900) scale(0.3) rotate(90)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(300, 750) scale(0.2) rotate(120)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(750, 250) scale(0.25) rotate(150)">
+      <use href="#leaf" fill="white" />
+    </g>
+    <g transform="translate(1100, 650) scale(0.2) rotate(180)">
+      <use href="#leaf" fill="white" />
+    </g>
+  </g>
+</svg>
