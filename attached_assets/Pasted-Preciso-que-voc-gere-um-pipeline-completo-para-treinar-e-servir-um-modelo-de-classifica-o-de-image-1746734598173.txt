@@ -1,0 +1,44 @@
+Preciso que você gere um pipeline completo para treinar e servir um modelo de classificação de imagens de espécies (plantas e animais), consumindo dados de bancos públicos. Siga estes passos:
+
+1. **Coleta de dados**  
+   - Use a API do iNaturalist para buscar observações de um determinado táxon (parâmetro `taxon_name`).  
+   - Extraia as URLs das fotos (`photos[].url`) e salve-as em um arquivo de texto.  
+   - Faça o download de todas as imagens para pastas organizadas por nome científico:  
+     `/data/raw/<reino>/<ordem>/<familia>/<gênero>_<espécie>/img_{i}.jpg`
+
+2. **Metadata**  
+   - Crie um arquivo `labels.csv` com colunas:  
+     `filepath, taxon_id, scientific_name, common_name, latitude, longitude`  
+   - Preencha a partir dos campos retornados pela API (`taxon.id`, `taxon.name`, `taxon.preferred_common_name`, `geojson.coordinates`).
+
+3. **Pré-processamento**  
+   - Redimensione cada imagem para 224×224 pixels.  
+   - Aplique data augmentation: rotações ±20°, flips horizontais, ajustes leves de brilho/contraste.  
+   - Normalize pelos valores de média e desvio-padrão do ImageNet.
+
+4. **Dataset e DataLoader**  
+   - Use `torchvision.datasets.ImageFolder` apontando para `/data/processed/train` e `/data/processed/val`.  
+   - Crie `DataLoader` com `batch_size=32` e `shuffle=True`.
+
+5. **Modelo**  
+   - Carregue `resnet50(pretrained=True)` do `torchvision.models`.  
+   - Substitua `fc` por um `nn.Linear` com saída igual ao número de classes detectadas no `labels.csv`.  
+   - Use `CrossEntropyLoss` e otimizador `Adam(lr=1e-4)`.
+
+6. **Treinamento**  
+   - Rode um loop de treinamento por `epochs=30`.  
+   - Ao final de cada época, avalie no conjunto de validação e imprima `loss` e `accuracy`.
+
+7. **Exportação**  
+   - Salve o modelo final em `/models/species_classifier.pth`.  
+   - Gere um script FastAPI (`app.py`) que:  
+     - Exponha endpoint `POST /predict` que receba imagem (multipart).  
+     - Aplique mesmo pré-processamento e devolva as top-5 previsões com nomes científicos e probabilidades.
+
+8. **Indexação por Embedding (opcional)**  
+   - Extraia embeddings do penúltimo layer para todas as imagens de referência.  
+   - Use FAISS para criar um índice e, em `/predict`, retorne também os k-vizinhos mais próximos no embedding space.
+
+Comente cada bloco de código e certifique-se de que todas as dependências estejam listadas em um `requirements.txt` (torch, torchvision, fastapi, uvicorn, requests, faiss-cpu, Pillow, pandas, scikit-learn).  
+
+Obrigado!

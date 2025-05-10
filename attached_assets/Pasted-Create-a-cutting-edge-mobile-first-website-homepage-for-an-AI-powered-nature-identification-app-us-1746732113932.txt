@@ -1,0 +1,83 @@
+Create a cutting-edge, mobile-first website homepage for an AI-powered nature identification app, using a dramatic contrast of deep black and a rich spectrum of greens to evoke lush forests and living ecosystems. Draw inspiration from the modular, neon-accented aesthetic of worklouder.cc—but replace neon yellow and cyan with vibrant greens and organic textures. Use glassmorphism, soft shadows, and smooth animations to blend high-tech UI with natural motifs.
+
+**Overall Color Palette**  
+- **Background**: #000000 (pure black)  
+- **Primary Accent Greens**:  
+  - #00FF7F (Spring Green)  
+  - #32CD32 (Lime Green)  
+  - #1DB954 (Spotify Green)  
+  - #006400 (Dark Green)  
+  - #158C46 (Deep Forest Green)  
+- **Text & Secondary Accents**:  
+  - #E5E5E5 (light gray) for body copy  
+  - #FFFFFF (white) for headings and key labels  
+
+**Layout Structure & Components**  
+
+1. **Sticky Top Navbar**  
+   - Semi-transparent black panel with a subtle glass blur effect.  
+   - **Left**: Logo combining a stylized leaf + circuit icon in glowing Spring Green (#00FF7F).  
+   - **Center**: Menu links in white: Explore | How It Works | Try Now | About  
+   - **Right**: Primary CTA button “Identify a Species” in Spring Green, glowing softly on hover, border-radius 2xl.
+
+2. **Fullscreen Hero Section**  
+   - **Background**: gradient from #000000 at top to #006400 at bottom, with drifting translucent leaf-shaped particles.  
+   - **Central Mockup**: smartphone frame displaying the app scanning a leaf.  
+     - On-screen overlay: “🍃 *Ficus lyrata* – 99.3% confidence” in bold white + Spring Green highlight.  
+   - **Headline**: “Discover the Wild World at Your Fingertips” in large, bold sans-serif white, with a thin Lime Green (#32CD32) stroke.  
+   - **Subheadline**: “Instant AI identification of plants & animals—anywhere, anytime.” in light gray.  
+   - **CTA**: “Try It Now” button in Lime Green, glassmorphic background, faint pulse animation on hover.
+
+3. **Three Feature Modules** (horizontally aligned on desktop, stacked on mobile)  
+   - **📸 Snap**  
+     - Icon in Spring Green with drop shadow  
+     - Description: “Capture any organism with your camera”  
+     - Card background: translucent #000000 @ 30% opacity, border-radius 2xl, soft Dark Green (#158C46) glow on hover  
+   - **🔍 Analyze**  
+     - Icon in Spotify Green (#1DB954)  
+     - Description: “AI matches your photo to millions of species”  
+   - **📚 Learn**  
+     - Icon in Lime Green (#32CD32)  
+     - Description: “Get detailed facts, habitat info & more”
+
+4. **Species Gallery Grid**  
+   - Grid of 6 circular cards, each with:  
+     - High-res wildlife/plant photo framed by a glassmorphic circle (border: 2px #00FF7F)  
+     - Name: common + scientific in white + Dark Green subtext  
+     - Confidence badge: small pill (#32CD32 background, white text)  
+     - “More Info” link in Spring Green underline style  
+
+5. **Interactive Result Simulator**  
+   - Horizontal scroll section with 4–5 result previews. Each:  
+     - Thumbnail image masked in an organic leaf shape  
+     - Overlay panel (#000000 @ 50% opacity) showing:  
+       - Species name in bold white  
+       - Animated confidence bar (gradient from #00FF7F → #006400)  
+       - Buttons: “🧠 Learn More” and “📤 Share” in Spring Green with soft glow.
+
+6. **Footer**  
+   - Deep black background, centered content.  
+   - Social icons (Instagram, Twitter/X, YouTube) in Spring Green, hover to #32CD32.  
+   - Newsletter signup: white input field, “Subscribe” button in Lime Green with hover expand.  
+   - Footer links (Privacy | Terms | Contact) in light gray, turning Spring Green on hover.  
+   - Tagline: “Identify. Learn. Connect with Nature 🌿” in white.
+
+**Typography & Iconography**  
+- **Headings**: bold geometric sans-serif (e.g., Space Grotesk), white or Lime Green stroke.  
+- **Body Text**: light sans-serif, #E5E5E5.  
+- **Icons & Emojis**: use green-tinted line-icons and contextual emojis (🍃, 🐦, 🦋) for friendly tone.
+
+**Interactions & Animations**  
+- Hover glows on buttons/cards in corresponding accent green.  
+- Smooth scrolling between sections.  
+- Subtle parallax on hero particles.  
+- Responsive 12-column grid, mobile-first breakpoints, collapsible menu.
+
+Generate in ultra-high resolution for UI showcase. Emphasize clarity, immersive contrast of black + greens, and an intuitive journey through the natural world powered by AI.```
+
+
+
+
+
+
+
