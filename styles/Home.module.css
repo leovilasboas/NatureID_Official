@@ -1,0 +1,90 @@
+/* Animated marquee for the hero section */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marqueeContent {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+  padding-left: 100%;
+}
+
+/* Modern card styles */
+.glassCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glassCard:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Button styles */
+.primaryButton {
+  background: linear-gradient(to right, #2a9d56, #34cc5e);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(8, 99, 49, 0.3);
+  text-align: center;
+}
+
+.primaryButton:hover {
+  background: linear-gradient(to right, #238a48, #2bb352);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(8, 99, 49, 0.4);
+}
+
+.primaryButton:active {
+  transform: translateY(1px);
+}
+
+/* Special text effects */
+.gradientText {
+  background: linear-gradient(to right, #2a9d56, #70e095);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Hero title styling */
+.heroTitle {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Animated background patterns */
+.backgroundPatterns {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}

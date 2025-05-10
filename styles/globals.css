@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Modern green-themed colors based on design spec */
+  --background-color: #000000; /* Pure black */
+  --text-color: #FFFFFF;
+  --text-secondary: #E5E5E5;
+  
+  /* Primary Accent Greens */
+  --spring-green: #00FF7F;
+  --lime-green: #32CD32;
+  --spotify-green: #1DB954;
+  --dark-green: #006400;
+  --forest-green: #158C46;
+  
+  /* UI Elements */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(0, 0, 0, 0.3);
+  --glass-blur: blur(12px);
+  --card-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.5);
+  
+  /* Gradient Colors */
+  --gradient-start: #000000;
+  --gradient-mid: #006400;
+  --gradient-end: #00FF7F;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Modern typography system inspired by Stripe */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: -1.5px;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+  letter-spacing: -0.3px;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Improve input appearance on mobile */
+input, 
+button, 
+select, 
+textarea {
+  font-size: 16px; /* Prevents zoom on iOS */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Prevent pull-to-refresh on mobile */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* Disable highlighting when tapping elements on mobile */
+button, 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Loading spinner utility classes */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Stripe-inspired components */
+.stripe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.stripe-header {
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.stripe-gradient-bg {
+  background: linear-gradient(135deg, var(--gradient-start), var(--dark-green), var(--spring-green));
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.stripe-button {
+  background: linear-gradient(135deg, var(--lime-green), var(--dark-green));
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 255, 127, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.stripe-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.stripe-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 127, 0.4);
+}
+
+.stripe-button:hover:before {
+  left: 100%;
+}
+
+.stripe-button-outline {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--spring-green);
+  border: 1px solid rgba(0, 255, 127, 0.3);
+  border-radius: 24px;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 255, 127, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stripe-button-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(0, 255, 127, 0.2);
+  border-color: var(--spring-green);
+  background-color: rgba(0, 255, 127, 0.1);
+}
+
+.stripe-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stripe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -20px rgba(10, 37, 64, 0.15);
+}
+
+.stripe-gradient-text {
+  /* Simple colored text instead of gradient for better readability */
+  color: var(--spring-green);
+  text-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Modern background with patterns - worklouder inspired */
+.nature-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 127, 0.15) 1%, transparent 6%),
+    radial-gradient(circle at 75% 85%, rgba(50, 205, 50, 0.15) 1%, transparent 6%),
+    radial-gradient(circle at 85% 15%, rgba(0, 255, 127, 0.15) 1%, transparent 6%),
+    radial-gradient(circle at 15% 65%, rgba(21, 140, 70, 0.15) 1%, transparent 6%);
+  background-size: 50% 50%;
+}
+
+/* Pulse animation for CTA buttons */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 10px 2px rgba(0, 255, 127, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(0, 255, 127, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px 2px rgba(0, 255, 127, 0.2);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+/* Leaf particle animation */
+@keyframes leaf-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-40px) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+.leaf-particle {
+  position: absolute;
+  color: var(--spring-green);
+  opacity: 0.4;
+  animation: leaf-float 10s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+/* Fix for the top navigation bar */
+.top-nav {
+  background-color: #000;
+  border-bottom: 1px solid rgba(0, 255, 127, 0.3);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 255, 127, 0.2);
+}
+
+
+
+/* Estilos específicos para elementos Leaflet */
+.leaflet-container {
+  background-color: #121212;
+  z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #121212;
+  color: white;
+  border: 1px solid #00FF7F;
+}
+
+.leaflet-popup-tip {
+  background-color: #121212;
+}
+
+/* Esconder atribuição do mapa para manter o design limpo */
+.leaflet-control-attribution {
+  display: none !important;
+}
